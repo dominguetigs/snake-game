@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+}
+
+body {
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+}
+
+canvas {
+  background-color: var(--canvas-background);
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.3em;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noselect {
+  user-select: none;
+}
+
+.action-buttons {
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-buttons .principal {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.action-buttons .extra {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#game-pad {
+  display: none;
+}
+
+#game-pad.--desactive {
+  color: var(--disable-text);
+}
+
+.action-buttons i {
+  padding: 16px 8px;
+  cursor: pointer;
+}
+
+.action-buttons i:last-child {
+  padding-right: 16px;
+}
+
+.action-buttons i.hidden {
+  display: none;
+}
+
+.score-container {
+  position: absolute;
+  top: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-container h2 {
+  font-size: initial;
+  font-weight: 300;
+}
+
+.score-container span {
+  font-weight: 700;
+}
+
+.controls-container {
+  display: none;
+  margin: 16px 0;
+  font-size: 1.7em;
+}
+
+.controls-container .controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls .middle i:first-child {
+  margin-right: 16px;
+}
+
+.controls .middle i:last-child {
+  margin-left: 16px;
+}
+
+#game-pad-control.--desactive {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #game-pad {
+    display: block;
+  }
+
+  .controls-container {
+    display: block;
+  }
+}

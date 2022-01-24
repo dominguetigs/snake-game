@@ -1,0 +1,21 @@
+html {
+  --background: #f5f5f5;
+  --box-shadow: #f5f5f5;
+  --text: #212121;
+  --disable-text: #a0a0a0;
+  --canvas-background: #ffffff;
+  --canvas-grid: #cccccc;
+  --snake: #212121;
+  --game-over: #212121;
+}
+
+.theme-dark {
+  --background: #222738;
+  --box-shadow: #222738;
+  --text: #6e7888;
+  --disable-text: #a0a0a0;
+  --canvas-background: #181825;
+  --canvas-grid: #232332;
+  --snake: #ffffff;
+  --game-over: #4cffd7;
+}

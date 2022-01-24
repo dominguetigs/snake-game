@@ -1,0 +1,18 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "description": "Snake game build with ESM using JS",
+  "exports": "./index.mjs",
+  "scripts": {
+    "start": "npx http-server src"
+  },
+  "keywords": [],
+  "author": "Gustavo Santana Domingueti",
+  "license": "ISC",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "dependencies": {
+    "http-server": "^13.0.1"
+  }
+}

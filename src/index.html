@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0"
+    />
+    <title>Snake Game</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/day-night-toggle.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="noselect">
+    <span class="toggle"></span>
+    <span class="ripple"></span>
+
+    <div class="container">
+      <div class="wrapper">
+        <div class="action-buttons">
+          <div class="principal">
+            <!-- <i class="fas fa-play"></i>
+            <i class="fas fa-pause"></i>
+            <i class="fas fa-stop"></i> -->
+            <i id="play-game" class="fas fa-play-circle"></i>
+            <i id="pause-game" class="fas fa-pause-circle"></i>
+            <i id="reset-game" class="fas fa-redo"></i>
+            <i id="game-pad" class="--desactive fas fa-gamepad"></i>
+            <!-- <i class="fas fa-stop-circle"></i> -->
+
+            <!-- <i class="far fa-play-circle"></i>
+            <i class="far fa-pause-circle"></i>
+            <i class="far fa-stop-circle"></i> -->
+          </div>
+          <div class="extra">
+            <i id="volume-mute" class="fas fa-volume-mute"></i>
+            <i id="volume-up" class="fas fa-volume-up"></i>
+          </div>
+        </div>
+        <div id="canvas"> </div>
+        <div class="score-container">
+          <h2>SCORE </h2>
+          <span id="score">00</span>
+        </div>
+        <div id="game-pad-control" class="--desactive">
+          <div class="controls-container">
+            <div class="controls">
+              <div class="up">
+                <i class="fas fa-arrow-circle-up"></i>
+              </div>
+              <div class="middle">
+                <i class="fas fa-arrow-circle-left"></i>
+                <i class="fas fa-arrow-circle-right"></i>
+              </div>
+              <div class="down">
+                <i class="fas fa-arrow-circle-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./index.mjs"></script>
+  </body>
+</html>
