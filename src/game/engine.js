@@ -10,11 +10,13 @@ import { AssetsLoader } from '../utils/assetsLoader.js';
 
 import { RATIO } from './constants/constants.js';
 import { Utils } from '../utils/utils.js';
+import { Props } from './props.js';
 
 export class Engine {
   snake;
   fruit;
   playLabel;
+  props;
 
   constructor() {
     this.width = window.innerWidth;
@@ -114,20 +116,22 @@ export class Engine {
 
   update() {
     this.snake.update();
-    this.playLabel.update();
+    // this.playLabel.update();
   }
 
   draw() {
     this.snake.draw();
+    this.props.draw();
     this.fruit.draw();
-    this.playLabel.draw();
+    // this.playLabel.draw();
   }
 
   start() {
     if (!this.initialized) {
       this.snake = new Snake(this);
+      this.props = new Props(this);
       this.fruit = new Fruit(this);
-      this.playLabel = new PlayLabel(this);
+      // this.playLabel = new PlayLabel(this);
 
       this.initialized = true;
     }

@@ -227,11 +227,17 @@ export class Snake {
 
       if (!this.crashed && !this.delay--) {
         const { position: foodPosition } = this.engine.fruit;
+        const { coordinatesVectors: coordinates } = this.engine.props;
 
         if (Physics.isCollision(this.position, foodPosition)) {
           this.engine.gui.score();
           this.engine.fruit.update();
           this.total++;
+        }
+
+        if (Physics.checkCollisions(this.position, coordinates)) {
+          this.collisionSplash();
+          this.crashed = true;
         }
 
         this.history[this.total - 1] = new Vector(

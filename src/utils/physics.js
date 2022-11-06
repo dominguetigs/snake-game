@@ -8,8 +8,12 @@ export class Physics {
     return vector1.x === vector2.x && vector1.y === vector2.y;
   }
 
-  static checkCollisions(x1, y1, coordinates = []) {
+  /* static checkCollisions(x1, y1, coordinates = []) {
     return coordinates.some(([x, y]) => this.checkCollision(x1, y1, x, y));
+  } */
+
+  static checkCollisions(vector1, vectors = []) {
+    return vectors.some((vector) => this.isCollision(vector1, vector));
   }
 }
 

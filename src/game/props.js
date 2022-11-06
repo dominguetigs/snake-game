@@ -1,4 +1,5 @@
 import { AssetsLoader } from '../utils/assetsLoader.js';
+import { Vector } from '../utils/physics.js';
 import { Utils } from '../utils/utils.js';
 
 import { COLORS } from './constants/colors.js';
@@ -6,8 +7,9 @@ import { MAPS } from './constants/maps.js';
 
 export class Props {
   wallStyle = 'wall4';
-  map = MAPS.MAP_2;
+  map = MAPS.MAP_8;
   coordinates = [];
+  coordinatesVectors = [];
 
   constructor(engine) {
     this.engine = engine;
@@ -53,6 +55,12 @@ export class Props {
 
           if (resultMap[y][x]) {
             this.coordinates.push([startX + x, startY + y]);
+            this.coordinatesVectors.push(
+              new Vector(
+                (startX + x) * this.engine.tileSize,
+                (startY + y) * this.engine.tileSize
+              )
+            );
           }
         }
       }
@@ -80,7 +88,7 @@ export class Props {
   }
 
   draw() {
-    if (AssetsLoader.imageHasLoaded(this.wallStyle)) {
+    /* if (AssetsLoader.imageHasLoaded(this.wallStyle)) {
       for (const coordinates of this.coordinates) {
         const [x, y] = coordinates;
 
@@ -92,9 +100,9 @@ export class Props {
           this.engine.tileSize
         );
       }
-    }
+    } */
 
-    /* this.engine.canvas.ctx.fillStyle = COLORS.props;
+    this.engine.canvas.ctx.fillStyle = COLORS.props;
 
     for (const coordinates of this.coordinates) {
       const [x, y] = coordinates;
@@ -105,7 +113,7 @@ export class Props {
         this.engine.tileSize,
         this.engine.tileSize
       );
-    } */
+    }
   }
 
   _setSpaces(spaceDx, spaceDy, centerX, centerY, map) {

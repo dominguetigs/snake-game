@@ -10,6 +10,7 @@ export class Fruit {
   setup() {
     this.size = this.engine.tileSize;
     this.color = `hsl(${~~(Math.random() * 360)}, 100%, 50%)`;
+
     this.position = this._randomPosition();
 
     this.engine.controls.resizeObservable.subscribe(
@@ -58,9 +59,26 @@ export class Fruit {
   }
 
   _randomPosition() {
-    const [tilesX, tilesY] = this.engine.tiles;
-    const randomX = ~~(Math.random() * tilesX) * this.size;
-    const randomY = ~~(Math.random() * tilesY) * this.size;
-    return new Vector(randomX, randomY);
+    let foundAcceptedRandomPosition = false;
+    let vectorPosition = null;
+
+    while (!foundAcceptedRandomPosition) {
+      const [tilesX, tilesY] = this.engine.tiles;
+      const randomX = ~~(Math.random() * tilesX) * this.size;
+      const randomY = ~~(Math.random() * tilesY) * this.size;
+
+      vectorPosition = new Vector(randomX, randomY);
+
+      const hasSomeCollision = Physics.checkCollisions(
+        vectorPosition,
+        this.engine.props.coordinatesVectors
+      );
+
+      if (!hasSomeCollision) {
+        foundAcceptedRandomPosition = true;
+      }
+    }
+
+    return vectorPosition;
   }
 }
